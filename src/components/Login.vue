@@ -57,7 +57,8 @@ export default {
     tryLogin () {
       if (this.accessData.login === this.formData.login &&
         this.accessData.password === this.formData.password) {
-        this.$emit('userIsLogged')
+        sessionStorage.setItem('agroAdminAuth', 'isAuth')
+        this.$emit('userIsLogIn')
       } else {
         this.errorTypedAccessData = true
       }
